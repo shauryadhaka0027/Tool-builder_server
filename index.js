@@ -11,9 +11,10 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+const url= process.env.URL
 
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: url,
     methods: "GET, POST",
     credentials: true, // This is needed for accessing the API key from environment variables.
   }));
